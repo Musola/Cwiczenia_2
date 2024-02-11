@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Modelingu</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formularz Modelingu</h2>
+
+    <form action="/submit" method="post">
+        <!-- Imię -->
+        <label for="imie">Imię:</label>
+        <input type="text" id="imie" name="imie" required>
+
+        <!-- Nazwisko -->
+        <label for="nazwisko">Nazwisko:</label>
+        <input type="text" id="nazwisko" name="nazwisko" required>
+
+        <!-- PESEL -->
+        <label for="pesel">PESEL:</label>
+        <input type="text" id="pesel" name="pesel" pattern="\d{11}" placeholder="12345678901" required>
+        <small>Podaj 11 cyfr PESEL.</small>
+
+        <!-- Pytanie 1: Jaki masz kolor oczu? -->
+        <label for="kolor_oczu">Jaki masz kolor oczu?</label>
+        <input type="text" id="kolor_oczu" name="kolor_oczu" required>
+
+        <!-- Pytanie 2: Ile masz wzrostu? -->
+        <label for="wzrost">Ile masz wzrostu? (w centymetrach)</label>
+        <input type="number" id="wzrost" name="wzrost" required>
+
+        <!-- Pytanie 3: Jaki rozmiar ubrań nosisz? -->
+        <label for="rozmiar_ubran">Jaki rozmiar ubrań nosisz?</label>
+        <select id="rozmiar_ubran" name="rozmiar_ubran" required>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+
+        <!-- Pytanie 4: Jakie masz przeszłe doświadczenia w modelingu? -->
+        <label for="doswiadczenia_modeling">Jakie masz przeszłe doświadczenia w modelingu?</label>
+        <textarea id="doswiadczenia_modeling" name="doswiadczenia_modeling" rows="4" required></textarea>
+
+        <!-- Przycisk do wysłania formularza -->
+        <input type="submit" value="Wyślij">
+    </form>
+
+</body>
+</html>
